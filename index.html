@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milk & Maid Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Home-Book</h1>
+        <div class="calendar-header">
+            <button id="prev-month">&lt;</button>
+            <h2 id="month-year"></h2>
+            <button id="next-month">&gt;</button>
+        </div>
+        <div class="calendar-grid" id="calendar-grid"></div>
+        <button id="export-data">Export to Excel</button>
+    </div>
+
+    <!-- Modal for Input -->
+    <div id="input-modal" class="modal hidden">
+        <div class="modal-content">
+            <span id="close-modal">&times;</span>
+            <h3 id="modal-date"></h3>
+
+            <!-- Custom Data Input -->
+            <div id="custom-fields">
+                <h4>Custom Data</h4>
+                <div id="custom-data-list"></div>
+                <input type="text" id="custom-field-name" placeholder="Field Name">
+                <input type="number" id="custom-field-quantity" placeholder="Quantity">
+                <button id="add-custom-field">Add Custom Data</button>
+            </div>
+
+            <label for="milk-input">Milk Intake (Liters):</label>
+            <select id="milk-input">
+                <option value="0.5">0.5 Liters</option>
+                <option value="1.0">1.0 Liters</option>
+                <option value="1.5">1.5 Liters</option>
+                <option value="2.0">2.0 Liters</option>
+                <option value="3.0">3.0 Liters</option>
+            </select>
+
+            <label for="attendance-status">Maid Attendance:</label>
+            <select id="attendance-status">
+                <option value="Present">Present</option>
+                <option value="Absent">Absent</option>
+            </select>
+            
+            <button id="save-data">Save</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
